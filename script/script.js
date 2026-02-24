@@ -55,6 +55,72 @@ function toggleStyle(id){
 }
 
 
+main.addEventListener('click',function(event){
+    if(event.target.classList.contains('interview')){
+        const parent = event.target.parentNode.parentNode;
+        const companyName = parent.querySelector('.company-name').innerText
+        const jobPosition = parenNode.querySelector('.job-positon').innerText
+        const jobType = parenNode.querySelector('.job-type').innerText
+        const appliedStatus = parenNode.querySelector('.applied-status').innerText
+        const jobDescription = parenNode.querySelector('.job-description').innerText
+
+        parent.querySelector('.appliedStatus').innerText = 'Interview';
+
+        const jobInfo = {
+            companyName,
+            jobType,
+            jobPosition,
+            appliedStatus : 'Interview',
+            jobDescription
+        }
+
+        const existingJobs = interviewList.find(item => item.companyName == cardInfo.companyName)
+
+        if(!existingJobs){
+            interviewList.push(jobInfo)
+        }
+
+        rejectedList = rejectedList.filter(item => item.companyName != jobInfo.companyName)
+
+        // if(currentStatus == 'rejected'){
+
+        // }
+
+        countCalculation();
+    }
+    else if(event.target.classList.contains('rejected')){
+        const parent = event.target.parentNode.parentNode;
+        const companyName = parent.querySelector('.company-name').innerText
+        const jobPosition = parenNode.querySelector('.job-positon').innerText
+        const jobType = parenNode.querySelector('.job-type').innerText
+        const appliedStatus = parenNode.querySelector('.applied-status').innerText
+        const jobDescription = parenNode.querySelector('.job-description').innerText
+
+        parent.querySelector('.appliedStatus').innerText = 'Rejected';
+
+        const jobInfo = {
+            companyName,
+            jobType,
+            jobPosition,
+            appliedStatus : 'Rejected',
+            jobDescription
+        }
+
+        const existingJobs = rejectedList.find(item => item.companyName == jobInfo.companyName)
+
+        if(!existingJobs){
+            rejectedList.push(jobInfo)
+        }
+
+        interviewList = interviewList.filter(item => item.companyName != jobInfo.companyName)
+
+        // if(currentStatus == 'interview'){
+
+        // }
+
+        countCalculation();
+    }
+})
 
 
 
