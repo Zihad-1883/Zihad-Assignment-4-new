@@ -123,6 +123,70 @@ main.addEventListener('click',function(event){
 })
 
 
+function renderInterview(){
+    hiddenDiv.innerHTML = ''
+
+    for(let interviews of interviewList){
+        // console.log(interviews)
+        let div = document.createElement('div')
+        div.className('job-card p-6 bg-white rounded-md mb-4')
+        div.innerHTML = `
+        <div class="flex justify-between items-center mb-5">
+                <div>
+                    <h2 class="company-name text-[18px] font-semibold mb-1">${interviews.companyName}</h2>
+                    <h3 class="job-positon opacity-80">${interviews.jobPosition}</h3>
+                </div>
+                <div class="delet">
+                    <img src="./B13-A4-PH-Job-Tracker/Trash.png" alt="">
+                </div>
+            </div>
+            <!-- rest elements -->
+             <p class="job-type text-[14px] opacity-80 mb-5">${interviews.jobType}</p>
+             <div class="bg-[#eef4ffFF] max-w-[113px] min-h-[35px] flex items-center justify-center rounded-md mb-4">
+                <h5 class="applied-status text-[14px] font-medium px-3 py-2">${interviews.appliedStatus}</h5>
+             </div>
+             <p class="job-description text-[14px] text-[#323b49FF] mb-5">${interviews.jobDescription}</p>
+             <div class="grid grid-cols-1 sm:flex gap-2">
+                 <button class="interview btn btn-outline px-5 py-3 text-green-500 text-[14px] font-semibold">INTERVIEW</button>
+                 <button class="rejected btn btn-outline px-5 py-3 text-red-500 text-[14px] font-semibold">REJECTED</button>
+             </div>
+        `
+        hiddenDiv.appendChild(div)
+    }
+}
+
+function renderRejected(){
+       hiddenDiv.innerHTML = ''
+
+    for(let reject of rejectedList){
+        // console.log(interviews)
+        let div = document.createElement('div')
+        div.className('job-card p-6 bg-white rounded-md mb-4')
+        div.innerHTML = `
+        <div class="flex justify-between items-center mb-5">
+                <div>
+                    <h2 class="company-name text-[18px] font-semibold mb-1">${reject.companyName}</h2>
+                    <h3 class="job-positon opacity-80">${reject.jobPosition}</h3>
+                </div>
+                <div class="delet">
+                    <img src="./B13-A4-PH-Job-Tracker/Trash.png" alt="">
+                </div>
+            </div>
+            <!-- rest elements -->
+             <p class="job-type text-[14px] opacity-80 mb-5">${reject.jobType}</p>
+             <div class="bg-[#eef4ffFF] max-w-[113px] min-h-[35px] flex items-center justify-center rounded-md mb-4">
+                <h5 class="applied-status text-[14px] font-medium px-3 py-2">${reject.appliedStatus}</h5>
+             </div>
+             <p class="job-description text-[14px] text-[#323b49FF] mb-5">${reject.jobDescription}</p>
+             <div class="grid grid-cols-1 sm:flex gap-2">
+                 <button class="interview btn btn-outline px-5 py-3 text-green-500 text-[14px] font-semibold">INTERVIEW</button>
+                 <button class="rejected btn btn-outline px-5 py-3 text-red-500 text-[14px] font-semibold">REJECTED</button>
+             </div>
+        `
+        hiddenDiv.appendChild(div)
+    }
+}
+
 
 
 
