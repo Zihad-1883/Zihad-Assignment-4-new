@@ -15,25 +15,44 @@ const main = document.getElementById('main');
 const hiddenDiv = document.getElementById('hidden-section');
 
 
+function countCalculation(){
+    total.innerText = jobsDiv.children.length;
+}
+
+countCalculation();
+
+function toggleStyle(id){
+    allFilterBtn.classList.add('text-[#64748bFF]', 'bg-white', 'border-none', 'shadow-sm');
+    interviewFilterBtn.classList.add('text-[#64748bFF]', 'bg-white', 'border-none', 'shadow-sm');
+    rejectedFilterBtn.classList.add('text-[#64748bFF]', 'bg-white', 'border-none', 'shadow-sm');
+
+    allFilterBtn.classList.remove('bg-blue-500','text-white');
+    interviewFilterBtn.classList.remove('bg-blue-500','text-white');
+    rejectedFilterBtn.classList.remove('bg-blue-500','text-white');
+
+    // console.log(id);
+
+    const clicked = document.getElementById(id);
+
+    currentStatus = id;
+    // console.log(currentStatus);
+    // console.log(clicked);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if(id === 'interview-button'){
+        jobsDiv.classList.add('hidden');
+        hiddenDiv.classList.remove('hidden');
+    }
+    else if(id === 'rejected-button'){
+        jobsDiv.classList.add('hidden');
+        hiddenDiv.classList.remove('hidden');
+    }
+    else if(id === 'ALL-btn'){
+        jobsDiv.classList.remove('hidden');
+        hiddenDiv.classList.add('hidden');
+    }
+        
+}
 
 
 
