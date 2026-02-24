@@ -1,3 +1,20 @@
+let interviewList = [];
+let rejectedList = [];
+let currentStatus = 'all';
+
+let total = document.getElementById('total');
+let interviewCount = document.getElementById('interview-count');
+let rejectedCount = document.getElementById('rejected-count');
+
+const allFilterBtn = document.getElementById('ALL-btn');
+const interviewFilterBtn = document.getElementById('interview-button');
+const rejectedFilterBtn = document.getElementById('rejected-button');
+
+const jobsDiv = document.getElementById('jobs-div');
+const main = document.getElementById('main');
+const hiddenDiv = document.getElementById('hidden-section');
+
+
 
 
 
